@@ -56,6 +56,25 @@ vim chrome-flags.conf
 
 paru -S visual-studio-code-bin 
 
+#vs-extensions 
+C/C++
+C/C++ Themes
+Better C++ Syntax
+Doxygen Documentation Generator
+Code Runner
+HTML Snippets
+indent-rainbow
+Language Support for Java(TM) by Red Hat
+Material Icon Theme
+Python
+rust-analyzer
+Visual Studio IntelliCode
+Pylance
+
+
+#jdk-openjdk  and pdftk, yt-dlp
+
+sudo pacman -S jdk-openjdk yt-dlp pdftk
 
 #Video Codecs
 
@@ -93,6 +112,12 @@ sudo pacman -S qt5-wayland qt6-wayland qt6-declarative qt6-declarative qt5-base 
 #OBS 
 
 sudo pacman -S obs-studio
+
+#rust 
+
+https://www.rust-lang.org/tools/install
+
+
 
 
 
