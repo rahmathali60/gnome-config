@@ -1,0 +1,93 @@
+#Post installation of gNome.
+
+#Installation Of Hardware Accelerating Drivers(Vaapi) : 
+
+sudo pacman -S intel-media-driver gstreamer gstreamer-vaapi gst-libav gst-plugins-good gst-plugins-base gst-plugins-bad gst-plugins-ugly vulkan-intel 
+
+
+#Firefox configuration: about:config
+
+gfx.webrender.all           --) true
+media.ffmpeg.vaapi.enabled  --) true
+media.ffvpx.enabled         --) false
+media.rdd-vpx.enabled       --) false
+media.av1.enabled           --) false
+
+#For WAYLAND:
+
+sudo vim /etc/environment
+
+export MOZ_ENABLE_WAYLAND=1
+export MOZ_DISABLE_RDD_SANDBOX=1
+LIBVA_DRIVER_NAME=iHD
+#QT_QPA_PLATFORM=wayland
+
+#Kernal: 
+
+sudo vim /etc/default/grub
+
+GRUB_CMDLINE_LINUX="nouveau.modeset=0"
+GRUB_DISABLE_OS_PROBER=false
+
+#zramd
+
+sudo pacman -S go 
+
+paru -S zramd
+
+#google-chrome
+
+paru -S google-chrome
+
+#config 
+
+cd ~/.config/
+vim chrome-flags.conf 
+
+--enable-features=VaapiVideoDecoder --use-gl=egl --ozone-platform-hint=auto
+
+#visual-studio-code
+
+paru -S visual-studio-code-bin 
+
+
+#Video Codecs
+
+sudo pacman -S aribb24 aribb25 
+
+#Photo Codecs
+
+sudo pacman -S libavif libwebp webp-pixbuf-loader 
+
+#Photo editor
+
+sudo pacman -S gthumb
+
+#Thumnails
+
+sudo pacman -S ffmpegthumbnailer 
+
+#Office and browser
+
+sudo pacman -S libreoffice-fresh firefox hunspell-en_us 
+
+#flatpak
+
+sudo pacman -S flatpak
+
+#obs-studio
+
+app/com.obsproject.Studio/x86_64/stable
+
+
+#qt wayland
+
+sudo pacman -S qt5-wayland qt6-wayland qt6-declarative qt6-declarative qt5-base  qt6-base 
+
+#OBS 
+
+sudo pacman -S obs-studio
+
+
+
+
