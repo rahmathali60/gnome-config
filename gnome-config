@@ -4,14 +4,13 @@
 
 sudo pacman -S intel-media-driver gstreamer gstreamer-vaapi gst-libav gst-plugins-good gst-plugins-base gst-plugins-bad gst-plugins-ugly vulkan-intel 
 
+#Photo editor #Thumnails #Photo Codecs #Video Codecs
 
-#Firefox configuration: about:config
+sudo pacman -S gthumb ffmpegthumbnailer libavif libwebp webp-pixbuf-loader aribb24 aribb25
 
-gfx.webrender.all           --) true
-media.ffmpeg.vaapi.enabled  --) true
-media.ffvpx.enabled         --) false
-media.rdd-vpx.enabled       --) false
-media.av1.enabled           --) false
+#Office and browser
+
+sudo pacman -S libreoffice-fresh firefox hunspell-en_us chromium 
 
 #For WAYLAND:
 
@@ -19,8 +18,17 @@ sudo vim /etc/environment
 
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_DISABLE_RDD_SANDBOX=1
-LIBVA_DRIVER_NAME=iHD
+#LIBVA_DRIVER_NAME=iHD
 #QT_QPA_PLATFORM=wayland
+
+#Firefox configuration: 
+about:config
+
+gfx.webrender.all           --) true
+media.ffmpeg.vaapi.enabled  --) true
+media.ffvpx.enabled         --) false
+media.rdd-vpx.enabled       --) false
+media.av1.enabled           --) false
 
 #Kernal: 
 
@@ -28,6 +36,19 @@ sudo vim /etc/default/grub
 
 GRUB_CMDLINE_LINUX="nouveau.modeset=0"
 GRUB_DISABLE_OS_PROBER=false
+
+#chrome-gnome-shell
+paru -S chrome-gnome-shell
+
+https://addons.mozilla.org/en-US/firefox/addon/gnome-shell-integration/
+
+#extension
+https://extensions.gnome.org/extension/4158/gnome-40-ui-improvements/
+https://extensions.gnome.org/extension/4703/dock-from-dash/
+https://extensions.gnome.org/extension/1160/dash-to-panel/
+https://extensions.gnome.org/extension/4548/tactile/
+https://extensions.gnome.org/extension/615/appindicator-support/
+
 
 #paru
 
@@ -57,6 +78,7 @@ vim chrome-flags.conf
 paru -S visual-studio-code-bin 
 
 #vs-extensions 
+
 C/C++
 C/C++ Themes
 Better C++ Syntax
@@ -76,25 +98,6 @@ Pylance
 
 sudo pacman -S jdk-openjdk yt-dlp pdftk
 
-#Video Codecs
-
-sudo pacman -S aribb24 aribb25 
-
-#Photo Codecs
-
-sudo pacman -S libavif libwebp webp-pixbuf-loader 
-
-#Photo editor
-
-sudo pacman -S gthumb
-
-#Thumnails
-
-sudo pacman -S ffmpegthumbnailer 
-
-#Office and browser
-
-sudo pacman -S libreoffice-fresh firefox hunspell-en_us 
 
 #flatpak
 
